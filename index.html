@@ -50,7 +50,7 @@
         <div class="banner row align-items-center">
             <div class="col-md-6">
                 <div class="banner-text">
-                    <h1 class="bannerHead">Witaj w świecie <span class="pokemon-color">Pokemonów</span></h1>
+                    <h1 class="bannerHead">Witaj w świecie <span class="pokemon-color">Pokémonów</span></h1>
                     <p class="bannerText">Odkryj fascynujący świat Pokémonów wraz z nami. Zapraszamy do eksploracji, zgłębiania wiedzy w encyklopedii, oraz dzielenia się poradami z innymi trenerami. Dołącz do naszej społeczności już teraz! Wspólnie możemy odkrywać tajemnice Pokémonów, trenować naszych ulubionych stworków i walczyć z innymi trenerami. Czekają na Ciebie niezliczone przygody i emocje! Zacznij już dziś swoją przygodę z Pokémonami!</p>
                     <button class="start btn btn-primary">Rozpocznij z nami!</button>
                     <button class="watch btn btn-secondary">
@@ -118,17 +118,170 @@
     </div>
 
     <div class="pokemon-info-container">
-        <div class="row align-items-center">
+        <div class="row align-items-center">            
             <div class="col-md-6">
-                <div class="info-text">
-                    <h2 class="infoHead">Informacje o Pokemonach</h2>
-                    <p class="infoText">Tutaj znajdziesz ciekawe informacje o różnych gatunkach Pokemonów, ich właściwościach, atakach i wiele więcej. Rozwijaj swoją wiedzę o świecie Pokémonów!</p>
+                <div id="pokemonCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/carousel1.png" class="d-block img-fluid" alt="Pokémon 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/carousel3.png" class="d-block img-fluid" alt="Pokémon 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/carousel2.png" class="d-block img-fluid" alt="Pokémon 2">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="pokemon-image">
-                    <img src="images/pokemon_info.jpg" class="img-fluid" alt="Pokémon Info">
+                <div class="info-text">
+                    <h2 class="infoHead">Informacje o <span class="pokemon-color">Pokémonach</span></h2>
+                    <p class="infoText">
+                        Tutaj znajdziesz ciekawe informacje o różnych gatunkach Pokémonów, ich właściwościach, atakach i wiele więcej. Rozwijaj swoją wiedzę o świecie Pokémonów! 
+                        Poznaj różnorodne regiony, w których można spotkać te niezwykłe stworzenia, od klasycznego Kanto po nowoczesne Galar. 
+                        Każdy Pokémon ma swoje unikalne zdolności i historie, które czekają na odkrycie. 
+                        Odkryj także sekrety legendarnych i mitycznych Pokémonów oraz ich rolę w świecie Pokémon. 
+                    </p>
                 </div>
+            </div>
+            <div class="col-md-6">
+                <div class="vector vector3">
+                    <svg width="680" height="660" viewBox="0 0 680 660" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.1" d="M477.036 22.0975C398.328 45.4117 313.577 39.7249 236.586 10.3998C210.858 0.597819 182.991 -3.58222 155.141 3.64374C54.917 29.6474 56.4237 181.23 81.2609 261.234C106.098 341.238 -3.2471 406.369 0.0742438 513.462C3.37939 620.555 187.414 558.94 264.518 578.949C309.057 590.501 340.423 654.806 481.475 659.423C622.527 664.024 726.169 603.479 657.052 404.668C587.952 205.857 700.068 73.23 585.214 15.3089C551.644 -1.62181 506.928 13.2513 477.036 22.0975Z" fill="url(#paint0_linear_10_531)"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_10_531" x1="324.831" y1="643.075" x2="398.854" y2="-10.1156" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="white" stop-opacity="0"/>
+                        <stop offset="0.9899" stop-color="white"/>
+                        </linearGradient>
+                        </defs>
+                        </svg>                        
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="vector vector4">
+                    <svg width="603" height="622" viewBox="0 0 603 622" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.2" d="M392.688 20.8358C310.737 42.8189 222.495 37.4568 142.333 9.80606C115.545 0.563686 86.5298 -3.37769 57.5318 3.4357C-46.8207 27.9547 -45.2519 170.883 -19.3915 246.319C6.46891 321.755 -107.381 383.167 -103.923 484.146C-100.481 585.124 91.1351 527.027 171.415 545.894C217.789 556.786 250.447 617.419 397.31 621.773C544.173 626.112 652.084 569.023 580.121 381.563C508.174 194.103 624.908 69.0489 505.323 14.4349C470.37 -1.52921 423.811 12.4947 392.688 20.8358Z" fill="url(#paint0_linear_10_422)"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_10_422" x1="234.212" y1="606.358" x2="297.565" y2="-10.9461" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="white" stop-opacity="0"/>
+                        <stop offset="0.9899" stop-color="white"/>
+                        </linearGradient>
+                        </defs>
+                        </svg>
+                        
+                </div>
+            </div>
+            <button class="info btn btn-primary">Rozpocznij z nami!</button>
+        </div>
+    </div>
+
+    <div class="types-container">
+        <h1 class="typeHead">Rodzaje <span class="pokemon-color">Pokémonów</span></h1>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <!--Component with statistics-->
+                <div class="stats-table-container stat1" id="bulbasaurStats"></div>               
+            </div>
+            <div class="col-md-6 pok1">
+                <div class="typeText">
+                    <div class="name1">
+                        <h3 class="typeName">Bulbasaur</h3>
+                        <p class="typeInfo">(jap. フシギダネ, Fushigidane)</p>
+                    </div>
+                    <div class="evolution-container evol1">
+                        <div class="evolution-item" data-target="bulbasaurStats">
+                            <img src="images/bulbasaur.png" class="evolution" alt="Bulbasaur">
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="evolution-item" data-target="bulbasaurStats">
+                            <img src="images/ivysaur.png" class="evolution" alt="Ivysaur">
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="evolution-item" data-target="bulbasaurStats">
+                            <img src="images/venusaur.png" class="evolution" alt="Venusaur">
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="col-md-6 pok2">
+                <div class="typeText">
+                    <div class="name2">
+                        <h3 class="typeName">Charmander</h3>
+                        <p class="typeInfo">(jap. ヒトカゲ, Hitokage)</p>
+                    </div>
+                    <div class="evolution-container evol2">
+                        <div class="evolution-item" data-target="charmanderStats">
+                            <img src="images/charmander.png" class="evolution" alt="Charmander">
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="evolution-item" data-target="charmanderStats">
+                            <img src="images/charmeleon.png" class="evolution" alt="Charmeleon">
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="evolution-item" data-target="charmanderStats">
+                            <img src="images/charizard.png" class="evolution" alt="Charizard">
+                            <div class="arrow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!--Component with statistics-->
+                <div class="stats-table-container stat2" id="charmanderStats"></div>              
+            </div>
+
+            <div class="col-md-6">
+                <!--Component with statistics-->
+                <div class="stats-table-container stat1" id="squirtleStats"></div>               
+            </div>
+            <div class="col-md-6 pok1 squirtle1">
+                <div class="typeText">
+                    <div class="name1">
+                        <h3 class="typeName">Squirtle</h3>
+                        <p class="typeInfo">(jap. ゼニガメ, Zenigame)</p>
+                    </div>
+                    <div class="evolution-container evol1">
+                        <div class="evolution-item" data-target="squirtleStats">
+                            <img src="images/squirtle.png" class="evolution" alt="Squirtle">
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="evolution-item" data-target="squirtleStats">
+                            <img src="images/wartortle.png" class="evolution" alt="Wartortle">
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="evolution-item" data-target="squirtleStats">
+                            <img src="images/blastoise.png" class="evolution" alt="Blastoise">
+                            <div class="arrow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="typeText">
+                    <div class="name2">
+                        <h3 class="typeName">Caterpie</h3>
+                        <p class="typeInfo">(jap. キャタピー, Kyatapi)</p>
+                    </div>
+                    <div class="evolution-container evol2">
+                        <div class="evolution-item" data-target="caterpieStats">
+                            <img src="images/caterpie.png" class="evolution" alt="Caterpie">
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="evolution-item" data-target="caterpieStats">
+                            <img src="images/metapod.png" class="evolution" alt="Metapod">
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="evolution-item" data-target="caterpieStats">
+                            <img src="images/butterfree.png" class="evolution" alt="Butterfree">
+                            <div class="arrow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!--Component with statistics-->
+                <div class="stats-table-container stat2 cater" id="caterpieStats"></div>               
             </div>
         </div>
     </div>
@@ -139,5 +292,7 @@
     </div>   
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="stats.js"></script>
+    
 </body>
 </html>
