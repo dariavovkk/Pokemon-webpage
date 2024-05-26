@@ -79,7 +79,9 @@ body {
 
 .bannerHead,
 .infoHead,
-.typeHead {
+.typeHead,
+.reviewHead,
+.reviewUser {
     font-family: "Jersey 15", sans-serif;
     font-size: 45px;
 }
@@ -90,7 +92,8 @@ body {
 
 .bannerText,
 .infoText,
-.typeInfo {
+.typeInfo,
+.reviewText {
     font-family: "Chakra Petch", sans-serif;
     font-size: 18px;
     color: #2E2594;
@@ -391,3 +394,147 @@ body {
     display: none;
 }
 
+.review-text {
+    text-align: center;
+    color: #2E2594;
+}
+
+.add-review {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+    text-align: center;
+}
+
+.form-group label {
+    display: block;
+    font-family: "Jersey 15", sans-serif;
+    font-size: 18px;
+    color: #2E2594;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(46, 37, 148, 0.1);
+    border: 2px solid #2E2594;
+}
+
+.inputText {
+    color: #2E2594;
+    opacity: 1.0;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #2E2594;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #D5356F;
+}
+
+#reviewsContainer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#reviewsList {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.review-item {
+    background-color: rgba(46, 37, 148, 0.1);
+    border: 2px solid #2E2594;
+    padding: 15px;
+    width: 300px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.review-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.review-item p {
+    margin: 5px 0 0;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.star {
+    color: rgba(46, 37, 148, 0.8);
+    padding: 0 5px;
+}
+
+.star.selected,
+.star:hover,
+.star:hover ~ .star {
+    color: #2E2594;
+}
+
+.buttonReview {
+    background-color: #D5356F;
+    border-color: #D5356F;
+    border-radius: 30px;
+    border: none;
+    height: 40px;
+    width: 170px;
+    font-family: "Jersey 15", sans-serif;
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+}
+
+.reviewUser {
+    color: #D5356F;
+}
+
+.footer {
+    height: 150px;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 200px;
+    margin-top: 50px;
+}
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    font-family: 'Jersey 15', sans-serif;
+    color: #2E2594;
+}
