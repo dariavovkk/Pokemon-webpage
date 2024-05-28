@@ -33,7 +33,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Encyklopedia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Porady</a>
+                        <a class="nav-link" href="porady.html">Porady</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Zarejestruj się</a>
@@ -117,233 +117,49 @@
         </div>
     </div>
 
-    <div class="list-container">
+    <div id="pokemon-container1" class="listContainer"></div>
+    <div id="pokemon-container2"></div>
+    <div id="pokemon-container3"></div>
+    <div id="pokemon-container4"></div>
+    <div id="pokemon-container5"></div>
+    <div id="pokemon-container6"></div>
+    <div id="pokemon-container7"></div>
+    <div id="pokemon-container8"></div>
+    <div id="pokemon-container9"></div>
+
+    <div class="pokemonInfoForm">
         <div class="listInfo">
-            <h1 class="listHead">Generacja 1 <span class="pokemon-color">Pokémon</span></h1>
-            <p class="listText">Generacja 1 Pokemon to pierwsza grupa Pokemonów wprowadzona w serii gier Pokemon. Składa się z wielu klasycznych i ikonicznych Pokemonów, które stały się znane na całym świecie.</p>
+            <h1 class="listHead">Pokémon Info</h1>
+            <p class="listText">Wprowadź nazwę Pokémona, aby uzyskać szczegółowe informacje na jego temat.</p>
         </div>
-        <div class="row align-items-center encRow">
-            <div class="col-md-2">
-                <img src="../images/home/pokemon/bulbasaur.png" alt="Bulbasaur" class="encPokemon">
-                <p class="description">
-                    #0001<br />
-                    Bulbasaur
-                </p>
+        <div class="formAPI">
+            <div class="formGroup">
+                <label for="pokemonName">Znajdż Swojego Pokémona: </label>
+                <input type="text" id="pokemonName" placeholder="e.g., pikachu" class="inputText">
             </div>
-            <div class="col-md-2">
-                <img src="../images/home/pokemon/ivysaur.png" alt="Ivysaur" class="encPokemon">
-                <p class="description">
-                    #0002<br />
-                    Ivysaur
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/pokemon/venusaur.png" alt="Venusaur" class="encPokemon">
-                <p class="description">
-                    #0003<br />
-                    Venusaur
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/pokemon/charmander.png" alt="Charmander" class="encPokemon">
-                <p class="description">
-                    #0004<br />
-                    Charmander
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/pokemon/charmeleon.png" alt="Charmeleon" class="encPokemon">
-                <p class="description">
-                    #0005<br />
-                    Charmeleon
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/pokemon/charizard.png" alt="Charizard" class="encPokemon">
-                <p class="description">
-                    #0006<br />
-                    Charizard
-                </p>
-            </div>
+            <button class="infoButton" onclick="getPokemonInfo()">Get Info</button>
         </div>
-        <div class="row align-items-center encRow">
-            <div class="col-md-2">
-                <img src="../images/home/pokemon/squirtle.png" alt="Squirtle" class="encPokemon">
-                <p class="description">
-                    #0007<br />
-                    Squirtle</p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/pokemon/wartortle.png" alt="Wartortle" class="encPokemon">
-                <p class="description">
-                    #0008<br />
-                    Wartortle</p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/pokemon/blastoise.png" alt="Blastoise" class="encPokemon">
-                <p class="description">
-                    #0009<br />
-                    Blastoise
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/pokemon/caterpie.png" alt="Caterpie" class="encPokemon">
-                <p class="description">
-                    #0010<br />
-                    Caterpie
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/pokemon/metapod.png" alt="Metapod" class="encPokemon">
-                <p class="description">
-                    #0011<br />
-                    Metapod
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/pokemon/butterfree.png" alt="Butterfree" class="encPokemon">
-                <p class="description">
-                    #0012<br />
-                    Butterfree
-                </p>
-            </div>
-        </div>
+        
+        <div id="pokemonInfo" class="descriptionInfo"></div>
     </div>
-
-    <div class="list-container2">
-        <div class="listInfo">
-            <h1 class="listHead">Generacja 2 <span class="pokemon-color">Pokémon</span></h1>
-            <p class="listText">Generacja 2 Pokemon to druga grupa Pokemonów wprowadzona w serii gier Pokemon. Składa się z wielu interesujących Pokemonów wprowadzonych w regionie Johto, który był głównym regionem gry w grach Pokemon Gold, Silver i Crystal.</p>
+    
+    <div class="footer">
+        <div class="footer-logo">
+            <img src="../images/home/decor/logo.png" alt="Logo">
         </div>
-        <div class="row align-items-center encRow">
-            <div class="col-md-2">
-                <img src="../images/home/generation2/chikorita.png" alt="Chikorita" class="encPokemon">
-                <p class="description">
-                    #0152<br />
-                    Chikorita
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/generation2/bayleef.png" alt="Bayleef" class="encPokemon">
-                <p class="description">
-                    #0153<br />
-                    Bayleef
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/generation2/meganium.png" alt="Meganium" class="encPokemon">
-                <p class="description">
-                    #0154<br />
-                    Meganium
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/generation2/cyndaquil.png" alt="Cyndaquil" class="encPokemon">
-                <p class="description">
-                    #0155<br />
-                    Cyndaquil
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/generation2/quilava.png" alt="Quilava" class="encPokemon">
-                <p class="description">
-                    #0156<br />
-                    Quilava
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/generation2/typhlosion.png" alt="Typhlosion" class="encPokemon">
-                <p class="description">
-                    #0157<br />
-                    Typhlosion
-                </p>
-            </div>
+        <div class="footer-menu">
+            <ul>
+                <li><a href="../index.html">Świat</a></li>
+                <li><a href="#">Encyklopedia</a></li>
+                <li><a href="porady.html">Porady</a></li>
+                <li><a href="#">Zarejestruj się</a></li>
+                <li><a href="#">Zaloguj się</a></li>
+            </ul>
         </div>
-        <div class="row align-items-center encRow">
-            <div class="col-md-2">
-                <img src="../images/home/generation2/totodile.png" alt="Totodile" class="encPokemon">
-                <p class="description">
-                    #0158<br />
-                    Totodile
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/generation2/croconaw.png" alt="Croconaw" class="encPokemon">
-                <p class="description">
-                    #0159<br />
-                    Croconaw
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/generation2/feraligatr.png" alt="Feraligatr" class="encPokemon">
-                <p class="description">
-                    #0160<br />
-                    Feraligatr
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/generation2/sentret.png" alt="Sentret" class="encPokemon">
-                <p class="description">
-                    #0161<br />
-                    Sentret
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/generation2/furret.png" alt="Furret" class="encPokemon">
-                <p class="description">
-                    #0162<br />
-                    Furret
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img src="../images/home/generation2/hoothoot.png" alt="Hoothoot" class="encPokemon">
-                <p class="description">
-                    #0163<br />
-                    Hoothoot
-                </p>
-            </div>
-        </div>
-    </div>
+    </div>  
 
-    <h1>Pokémon Info</h1>
-    <label for="pokemonName">Enter Pokémon Name:</label>
-    <input type="text" id="pokemonName" placeholder="e.g., pikachu">
-    <button onclick="getPokemonInfo()">Get Info</button>
-
-    <div id="pokemonInfo"></div>
-
-    <script>
-        async function getPokemonInfo() {
-            try {
-                const pokemonName = document.getElementById('pokemonName').value.trim().toLowerCase();
-                if (!pokemonName) {
-                    alert('Please enter a Pokémon name.');
-                    return;
-                }
-
-                const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
-                const response = await fetch(url);
-
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch data for ${pokemonName}. Status code: ${response.status}`);
-                }
-
-                const pokemonData = await response.json();
-
-                const pokemonInfoDiv = document.getElementById('pokemonInfo');
-                pokemonInfoDiv.innerHTML = `
-                    <h2>${pokemonData.name}</h2>
-                    <p>ID: ${pokemonData.id}</p>
-                    <p>Abilities: ${pokemonData.abilities.map(ability => ability.ability.name).join(', ')}</p>
-                    <p>Types: ${pokemonData.types.map(type => type.type.name).join(', ')}</p>
-                `;
-            } catch (error) {
-                console.error(error);
-                alert(`An error occurred: ${error.message}`);
-            }
-        }
-    </script>
-
+    <script src="../fetchInfo.js"></script>
+    <script src="../encyklopedia.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

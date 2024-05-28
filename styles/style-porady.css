@@ -197,127 +197,73 @@ body {
     top: 15%;
 }
 
-.listContainer {
-    margin-top: 20%;
+.tips-container {
+    margin-top: 17%;
+    margin-left: 3%;
 }
 
-.listInfo {
-    text-align: center;
-    color: #2E2594;
+.battle1 {
+    margin-left: 20%;
 }
 
-.listText {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+.battle {
+    border: 1px solid #2E2594;
+    margin: 20px;
 }
 
-.encRow {
-    margin-left: 6%;  
-}
-
-.encPokemon {
-    width: 100px;
-    height: 100px;
-}
-
-.description {
-    text-align: center;
-    margin-left: -55%;
-    color: #2E2594;
+.battleTips {
     font-family: "Jersey 15", sans-serif;
-    font-size: 20px;
+    font-size: 35px;
+    color: #D5356F;
+    text-align: center;
 }
 
-.list-container2 {
-    margin-top: 7%;
-}
-
-.pokemonInfoForm {
-    margin-top: 5%;
+.battleText {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #2E2594;
 }
 
 .listInfo {
     text-align: center;
-    margin-bottom: 20px;
-}
-
-.formAPI {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.formGroup {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-label {
-    font-family: "Chakra Petch", sans-serif;
-    font-size: 20px;
-    margin-right: 20px;
-    color: #D5356F;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-input {
-    box-sizing: border-box;
-    background-color: rgba(46, 37, 148, 0.1);
-    border: 2px solid #2E2594;
-    height: 40px;
-    margin-top: -5px;
-}
-
-input::placeholder {
-    color: white;
-}
-
-.inputText {
     color: #2E2594;
-    opacity: 1.0;
 }
 
-.infoButton {
+.tip-content {
+    display: none;
+}
+
+.tip-content.active {
     display: block;
-    background-color: #D5356F;
-    border-color: #D5356F;
-    border-radius: 30px;
+    font-family: "Chakra Petch", sans-serif;
+}
+
+ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.lista {
+    margin-bottom: 10px;
+    padding-left: 40px;
+    background: url('../images/home/decor/decor2.png') no-repeat left center;
+}
+
+.butWatch {
     border: none;
-    height: 40px;
-    width: 150px;
+    background-color: transparent;
+    color: #2E2594;
+    margin-left: 35%;
     font-family: "Jersey 15", sans-serif;
     font-size: 25px;
-    color: #fff;
 }
 
-.fetchImage {
-    width: 100px;
-    height: 100px;
-
-}
-
-.descriptionInfo {
-    width: 60%;
-    background-color: rgba(46, 37, 148, 0.1);
-    border: 1px solid #2E2594;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3%;
-    color: #fff;
-    font-family: "Jersey 15", sans-serif;
-    font-size: 20px;
-}
-
-.infoFetch {
-    font-size: 22px;
-    font-weight: bold;
-    color: #2E2594;
+.container {
+    position: fixed;
+    top: 25%;
+    left: 25%;
 }
 
 .footer {
@@ -345,5 +291,3 @@ input::placeholder {
     font-family: 'Jersey 15', sans-serif;
     color: #2E2594;
 }
-
-
