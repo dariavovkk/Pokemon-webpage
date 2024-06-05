@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jersey+15&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles/style-main.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,7 +40,7 @@
                         <a class="nav-link" href="pages/map.html">Mapa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Zarejestruj się</a>
+                        <a class="nav-link" href="pages/registration.html">Zarejestruj się</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Zaloguj się</a>
@@ -55,10 +56,6 @@
                 <div class="banner-text">
                     <h1 class="bannerHead">Witaj w świecie <span class="pokemon-color">Pokémonów</span></h1>
                     <p class="bannerText">Odkryj fascynujący świat Pokémonów wraz z nami. Zapraszamy do eksploracji, zgłębiania wiedzy w encyklopedii, oraz dzielenia się poradami z innymi trenerami. Dołącz do naszej społeczności już teraz! Wspólnie możemy odkrywać tajemnice Pokémonów, trenować naszych ulubionych stworków i walczyć z innymi trenerami. Czekają na Ciebie niezliczone przygody i emocje! Zacznij już dziś swoją przygodę z Pokémonami!</p>
-                    <button class="start btn btn-primary">Rozpocznij z nami!</button>
-                    <button class="watch btn btn-secondary">
-                        <i class="fas fa-play"></i> Zobacz film
-                    </button>
                 </div>
             </div>
             <div class="col-md-6">
@@ -175,7 +172,7 @@
                         
                 </div>
             </div>
-            <button class="info btn btn-primary">Rozpocznij z nami!</button>
+            <button class="info btn btn-primary" onclick="window.location.href='../pages/registration.html';">Rozpocznij z nami!</button>
         </div>
     </div>
 
@@ -194,15 +191,15 @@
                     </div>
                     <div class="evolution-container evol1">
                         <div class="evolution-item" data-target="bulbasaurStats">
-                            <img src="images/home/pokemon/bulbasaur.png" class="evolution" alt="Bulbasaur">
+                            <img src="images/encyklopedia/bulbasaur.png" class="evolution" alt="Bulbasaur">
                             <div class="arrow"></div>
                         </div>
                         <div class="evolution-item" data-target="bulbasaurStats">
-                            <img src="images/home/pokemon/ivysaur.png" class="evolution" alt="Ivysaur">
+                            <img src="images/encyklopedia/ivysaur.png" class="evolution" alt="Ivysaur">
                             <div class="arrow"></div>
                         </div>
                         <div class="evolution-item" data-target="bulbasaurStats">
-                            <img src="images/home/pokemon/venusaur.png" class="evolution" alt="Venusaur">
+                            <img src="images/encyklopedia/venusaur.png" class="evolution" alt="Venusaur">
                         </div>
                     </div>
                 </div>                
@@ -215,15 +212,15 @@
                     </div>
                     <div class="evolution-container evol2">
                         <div class="evolution-item" data-target="charmanderStats">
-                            <img src="images/home/pokemon/charmander.png" class="evolution" alt="Charmander">
+                            <img src="images/encyklopedia/charmander.png" class="evolution" alt="Charmander">
                             <div class="arrow"></div>
                         </div>
                         <div class="evolution-item" data-target="charmanderStats">
-                            <img src="images/home/pokemon/charmeleon.png" class="evolution" alt="Charmeleon">
+                            <img src="images/encyklopedia/charmeleon.png" class="evolution" alt="Charmeleon">
                             <div class="arrow"></div>
                         </div>
                         <div class="evolution-item" data-target="charmanderStats">
-                            <img src="images/home/pokemon/charizard.png" class="evolution" alt="Charizard">
+                            <img src="images/encyklopedia/charizard.png" class="evolution" alt="Charizard">
                             <div class="arrow"></div>
                         </div>
                     </div>
@@ -246,15 +243,15 @@
                     </div>
                     <div class="evolution-container evol1">
                         <div class="evolution-item" data-target="squirtleStats">
-                            <img src="images/home/pokemon/squirtle.png" class="evolution" alt="Squirtle">
+                            <img src="images/encyklopedia/squirtle.png" class="evolution" alt="Squirtle">
                             <div class="arrow"></div>
                         </div>
                         <div class="evolution-item" data-target="squirtleStats">
-                            <img src="images/home/pokemon/wartortle.png" class="evolution" alt="Wartortle">
+                            <img src="images/encyklopedia/wartortle.png" class="evolution" alt="Wartortle">
                             <div class="arrow"></div>
                         </div>
                         <div class="evolution-item" data-target="squirtleStats">
-                            <img src="images/home/pokemon/blastoise.png" class="evolution" alt="Blastoise">
+                            <img src="images/encyklopedia/blastoise.png" class="evolution" alt="Blastoise">
                             <div class="arrow"></div>
                         </div>
                     </div>
@@ -268,15 +265,15 @@
                     </div>
                     <div class="evolution-container evol2">
                         <div class="evolution-item" data-target="caterpieStats">
-                            <img src="images/home/pokemon/caterpie.png" class="evolution" alt="Caterpie">
+                            <img src="images/encyklopedia/caterpie.png" class="evolution" alt="Caterpie">
                             <div class="arrow"></div>
                         </div>
                         <div class="evolution-item" data-target="caterpieStats">
-                            <img src="images/home/pokemon/metapod.png" class="evolution" alt="Metapod">
+                            <img src="images/encyklopedia/metapod.png" class="evolution" alt="Metapod">
                             <div class="arrow"></div>
                         </div>
                         <div class="evolution-item" data-target="caterpieStats">
-                            <img src="images/home/pokemon/butterfree.png" class="evolution" alt="Butterfree">
+                            <img src="images/encyklopedia/butterfree.png" class="evolution" alt="Butterfree">
                             <div class="arrow"></div>
                         </div>
                     </div>
@@ -310,24 +307,24 @@
                     <textarea id="reviewText" name="reviewText" class="inputText" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="reviewRating">Oceń pokémona:</label>
-                    <div class="star-rating" id="starRating">
-                        <span class="star" data-value="5">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="1">★</span>
+                    <label for="reviewRating">Oceń: </label>
+                    <div id="starRating" class="star-rating">
+                        <span class="star" data-value="5">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="1">&#9733;</span>
                     </div>
+                    <input type="hidden" id="rating" name="rating" required>
                 </div>
                 <button type="submit" class="buttonReview">Prześlij Opinię</button>
             </form>
         </div>
 
         <div id="reviewsContainer">
-            <h1 class="reviewUser">Opinie użytkowników</h1>
+            <h2 class="review-Text">Opinie:</h2>
             <div id="reviewsList"></div>
         </div>
-    </div>
     
     <div class="footer">
         <div class="footer-logo">
@@ -338,8 +335,9 @@
                 <li><a href="#">Świat</a></li>
                 <li><a href="pages/encyklopedia.html">Encyklopedia</a></li>
                 <li><a href="pages/porady.html">Porady</a></li>
-                <li><a href="#">Zarejestruj się</a></li>
-                <li><a href="#">Zaloguj się</a></li>
+                <li><a href="pages/map.html">Mapa</a></li>
+                <li><a href="pages/registration.html">Zarejestruj się</a></li>
+                <li><a href="pages/login.html">Zaloguj się</a></li>
             </ul>
         </div>
     </div>   

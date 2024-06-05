@@ -19,6 +19,7 @@
     <!-- Google Maps JavaScript API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs-YPotUcw7zsWIZPR1tZttYk2UWFl0fY&libraries=places"></script>
     <link rel="stylesheet" href="../styles/style-map.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,10 +45,10 @@
                         <a class="nav-link active" href="#">Mapa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Zarejestruj się</a>
+                        <a class="nav-link" href="registration.html">Zarejestruj się</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Zaloguj się</a>
+                        <a class="nav-link" href="login.html">Zaloguj się</a>
                     </li>
                 </ul>
             </div>
@@ -60,10 +61,6 @@
                 <div class="banner-text">
                     <h1 class="bannerHead">Witaj w świecie <span class="pokemon-color">Pokémonów</span></h1>
                     <p class="bannerText">Odkryj fascynujący świat Pokémonów wraz z nami. Zapraszamy do eksploracji, zgłębiania wiedzy w encyklopedii, oraz dzielenia się poradami z innymi trenerami. Dołącz do naszej społeczności już teraz! Wspólnie możemy odkrywać tajemnice Pokémonów, trenować naszych ulubionych stworków i walczyć z innymi trenerami. Czekają na Ciebie niezliczone przygody i emocje! Zacznij już dziś swoją przygodę z Pokémonami!</p>
-                    <button class="start btn btn-primary">Rozpocznij z nami!</button>
-                    <button class="watch btn btn-secondary">
-                        <i class="fas fa-play"></i> Zobacz film
-                    </button>
                 </div>
             </div>
             <div class="col-md-6">
@@ -156,6 +153,22 @@
             <button type="submit" class="buttonReview">Report Sighting</button>
         </form>
     </div>
+
+    <div class="footer">
+        <div class="footer-logo">
+            <img src="../images/home/decor/logo.png" alt="Logo">
+        </div>
+        <div class="footer-menu">
+            <ul>
+                <li><a href="../index.html">Świat</a></li>
+                <li><a href="encyklopedia.html">Encyklopedia</a></li>
+                <li><a href="porady.html">Porady</a></li>
+                <li><a href="#">Mapa</a></li>
+                <li><a href="registration.html">Zarejestruj się</a></li>
+                <li><a href="login.html">Zaloguj się</a></li>
+            </ul>
+        </div>
+    </div>  
 
     <script>
         const firebaseConfig = {

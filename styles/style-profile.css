@@ -1,0 +1,32 @@
+.pokemonInfoForm {
+    margin-top: 15%;
+}
+
+.listInfo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.listHead {
+    font-family: "Jersey 15", sans-serif;
+    font-size: 45px;
+}
+
+.collection {
+    margin-top: 3%;
+}
+
+.collection-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+#collection-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.col-md-2 {
+    margin: 10px;
+}

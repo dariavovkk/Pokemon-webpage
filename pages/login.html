@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jersey+15&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="../styles/style-encyklopedia.css">
+    <link rel="stylesheet" href="../styles/style-login.css">
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
@@ -31,7 +31,7 @@
                         <a class="nav-link" aria-current="page" href="../index.html">Świat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Encyklopedia</a>
+                        <a class="nav-link" aria-current="page" href="encyklopedia.html">Encyklopedia</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="porady.html">Porady</a>
@@ -43,7 +43,7 @@
                         <a class="nav-link" href="registration.html">Zarejestruj się</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.html">Zaloguj się</a>
+                        <a class="nav-link active" href="#">Zaloguj się</a>
                     </li>
                 </ul>
             </div>
@@ -117,31 +117,28 @@
         </div>
     </div>
 
-    <div id="pokemon-container1" class="listContainer"></div>
-    <div id="pokemon-container2"></div>
-    <div id="pokemon-container3"></div>
-    <div id="pokemon-container4"></div>
-    <div id="pokemon-container5"></div>
-    <div id="pokemon-container6"></div>
-    <div id="pokemon-container7"></div>
-    <div id="pokemon-container8"></div>
-    <div id="pokemon-container9"></div>
-
-    <div class="pokemonInfoForm">
+    <div class="register-container">
         <div class="listInfo">
-            <h1 class="listHead">Pokémon Info</h1>
-            <p class="listText">Wprowadź nazwę Pokémona, aby uzyskać szczegółowe informacje na jego temat.</p>
+            <h1 class="listHead">Zaloguj się i <span class="pokemon-color">dołącz</span> do społeczności!</h1>
+            <p class="listText">
+                Ta sekcja jest dedykowana logowaniu użytkowników. Dołącz do nas już dziś i rozpocznij swoją przygodę  w świecie Pokémonów!
+            </p>
         </div>
-        <div class="formAPI">
-            <div class="formGroup">
-                <label for="pokemonName">Znajdż Swojego Pokémona: </label>
-                <input type="text" id="pokemonName" placeholder="e.g., pikachu" class="inputText">
-            </div>
-            <button class="infoButton" onclick="getPokemonInfo()">Get Info</button>
+
+        <div class="login">
+            <form class="login-form" id="loginForm">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Adres email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Hasło</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary loginBtn">Zaloguj się</button>
+            </form>
         </div>
-        
-        <div id="pokemonInfo" class="descriptionInfo"></div>
-    </div>
+    </div>   
     
     <div class="footer">
         <div class="footer-logo">
@@ -150,16 +147,36 @@
         <div class="footer-menu">
             <ul>
                 <li><a href="../index.html">Świat</a></li>
-                <li><a href="#">Encyklopedia</a></li>
+                <li><a href="encyklopedia.html">Encyklopedia</a></li>
                 <li><a href="porady.html">Porady</a></li>
+                <li><a href="map.html">Mapa</a></li>
                 <li><a href="registration.html">Zarejestruj się</a></li>
                 <li><a href="login.html">Zaloguj się</a></li>
             </ul>
         </div>
     </div>  
 
-    <script src="../fetchInfo.js"></script>
-    <script src="../encyklopedia.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const storedData = localStorage.getItem('user');
+            if (!storedData) {
+                document.getElementById('loginMessage').textContent = 'Proszę najpierw zarejestruj się.';
+                return;
+            }
+
+            const userData = JSON.parse(storedData);
+
+            if (email === userData.email && password === userData.password) {
+                window.location.href = 'profile.html';
+            } else {
+                document.getElementById('loginMessage').textContent = 'Niewłaściwy adres e-mail lub hasło.';
+            }
+        });
+    </script>
 </body>
 </html>

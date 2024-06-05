@@ -1,0 +1,42 @@
+.register-container {
+    margin-top: 20%;
+}
+
+.listInfo {
+    text-align: center;
+    color: #2E2594;
+}
+
+.login {
+    text-align: center;
+    margin-left: 33%;
+    width: 35%;
+    margin-bottom: 30px;
+}
+
+.login-form label {
+    display: block;
+    font-family: "Jersey 15", sans-serif;
+    font-size: 22px;
+    color: #2E2594;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(46, 37, 148, 0.1);
+    border: 2px solid #2E2594;
+}
+
+.loginBtn {
+    background-color: #2E2594;
+    border-color: #2E2594;
+    border-radius: 30px;
+    border: none;
+    height: 60px;
+    width: 200px;
+    font-family: "Jersey 15", sans-serif;
+    font-size: 25px;
+    color: #fff;
+}

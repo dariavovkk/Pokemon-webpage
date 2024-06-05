@@ -1,114 +1,74 @@
-function fetchReviews() {
-    const reviews = JSON.parse(localStorage.getItem('pokemonReviews')) || [];
-    console.log('Retrieved reviews from local storage:', reviews);
-    reviewsList.innerHTML = '';
-    reviews.forEach(review => {
-        console.log('Processing review:', review);
-        const reviewItem = document.createElement('div');
-        reviewItem.classList.add('review-item');
-        reviewItem.dataset.reviewId = review.id; // Assuming each review has a unique identifier
-        let reviewContent = `
-            <h3>${review.pokemonName}</h3>
-            <div class="rating">
-                ${getStarRatingHTML(Number(review.rating))}
-            </div>
-            <p>${review.reviewText}</p>
-        `;
-        reviewItem.innerHTML = reviewContent;
-        reviewsList.appendChild(reviewItem);
+document.addEventListener("DOMContentLoaded", function() {
+    const reviewForm = document.getElementById("reviewForm");
+    const reviewsList = document.getElementById("reviewsList");
+    const starRating = document.getElementById("starRating");
+    const ratingInput = document.getElementById("rating");
 
-        // Initialize stars for this review
-        const stars = reviewItem.querySelectorAll('.star');
-        const rating = parseInt(review.rating);
+    // Handle star click events
+    starRating.addEventListener("click", function(event) {
+        if (event.target.classList.contains("star")) {
+            const value = event.target.getAttribute("data-value");
+            ratingInput.value = value;
+            updateStars(value);
+        }
+    });
+
+    // Update star display based on rating
+    function updateStars(rating) {
+        const stars = starRating.querySelectorAll(".star");
         stars.forEach(star => {
-            const starValue = parseInt(star.getAttribute('data-value'));
-            if (starValue <= rating) {
-                star.classList.add('selected');
+            if (star.getAttribute("data-value") <= rating) {
+                star.classList.add("selected");
+            } else {
+                star.classList.remove("selected");
             }
         });
-    });
-}
-
-
-// Function to generate star rating HTML based on rating value
-function getStarRatingHTML(rating) {
-    console.log('Rating value:', rating);
-    let starsHTML = '';
-    for (let i = 0; i < 5; i++) {
-        if (i < rating) {
-            starsHTML += '<span class="star checked">★</span>';
-        } else {
-            starsHTML += '<span class="star">★</span>';
-        }
     }
-    return starsHTML;
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-    const reviewForm = document.getElementById('reviewForm');
-    const reviewsList = document.getElementById('reviewsList');
+    // Load reviews from local storage
+    function loadReviews() {
+        const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        reviewsList.innerHTML = '';
+        reviews.forEach((review) => {
+            const reviewItem = document.createElement("div");
+            reviewItem.className = "review-item";
+            reviewItem.innerHTML = `
+                <h3>${review.pokemonName}</h3>
+                <p>${review.reviewText}</p>
+                <div class="star-rating">${displayStars(review.rating)}</div>
+            `;
+            reviewsList.appendChild(reviewItem);
+        });
+    }
 
-    // Handle form submission
-    reviewForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const pokemonName = document.getElementById('pokemonName').value.trim();
-        const reviewText = document.getElementById('reviewText').value.trim();
-        const rating = document.querySelector('.star.selected').getAttribute('data-value');
-
-        console.log('Pokemon Name:', pokemonName);
-        console.log('Review Text:', reviewText);
-        console.log('Rating:', rating);
-
-        // Validate inputs
-        if (!pokemonName || !reviewText || !rating) {
-            alert('Please fill out all fields and select a rating.');
-            return;
+    // Function to display stars based on rating
+    function displayStars(rating) {
+        let stars = '';
+        for (let i = 1; i <= 5; i++) {
+            stars += i <= rating ? '&#9733;' : '&#9734;';
         }
+        return stars;
+    }
 
-        const newReview = { pokemonName, reviewText, rating };
-        const reviews = JSON.parse(localStorage.getItem('pokemonReviews')) || [];
-        reviews.push(newReview);
-        localStorage.setItem('pokemonReviews', JSON.stringify(reviews));
+    // Save a review
+    reviewForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const pokemonName = document.getElementById("pokemonName").value;
+        const reviewText = document.getElementById("reviewText").value;
+        const rating = ratingInput.value;
 
+        const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        reviews.push({ pokemonName, reviewText, rating });
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+
+        // Clear the form
         reviewForm.reset();
-        fetchReviews();
+        updateStars(0);
+
+        // Reload the reviews
+        loadReviews();
     });
 
-    // Handle star rating selection
-    document.querySelectorAll('.star').forEach(star => {
-        star.addEventListener('click', () => {
-            const clickedValue = parseInt(star.getAttribute('data-value'));
-            document.querySelectorAll('.star').forEach(star => {
-                const starValue = parseInt(star.getAttribute('data-value'));
-                if (starValue <= clickedValue) {
-                    star.classList.add('selected');
-                } else {
-                    star.classList.remove('selected');
-                }
-            });
-        });
-    });
-
-    // Function to initialize stars for each review
-    function initializeStars() {
-        const reviews = JSON.parse(localStorage.getItem('pokemonReviews')) || [];
-        reviews.forEach(review => {
-            const reviewItem = reviewsList.querySelector(`[data-review-id="${review.id}"]`);
-            if (reviewItem) {
-                const stars = reviewItem.querySelectorAll('.star');
-                const rating = parseInt(review.rating);
-                stars.forEach(star => {
-                    const starValue = parseInt(star.getAttribute('data-value'));
-                    if (starValue <= rating) {
-                        star.classList.add('selected');
-                    }
-                });
-            }
-        });
-    }
-
-
-    // Call initializeStars when the page loads
-    initializeStars();
-
+    // Initial load of reviews
+    loadReviews();
 });
