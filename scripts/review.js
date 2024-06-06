@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const starRating = document.getElementById("starRating");
     const ratingInput = document.getElementById("rating");
 
-    // Handle star click events
     starRating.addEventListener("click", function(event) {
         if (event.target.classList.contains("star")) {
             const value = event.target.getAttribute("data-value");
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Update star display based on rating
     function updateStars(rating) {
         const stars = starRating.querySelectorAll(".star");
         stars.forEach(star => {
@@ -25,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Load reviews from local storage
     function loadReviews() {
         const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
         reviewsList.innerHTML = '';
@@ -41,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Function to display stars based on rating
     function displayStars(rating) {
         let stars = '';
         for (let i = 1; i <= 5; i++) {
@@ -50,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
         return stars;
     }
 
-    // Save a review
     reviewForm.addEventListener("submit", function(event) {
         event.preventDefault();
         const pokemonName = document.getElementById("pokemonName").value;
@@ -61,14 +56,11 @@ document.addEventListener("DOMContentLoaded", function() {
         reviews.push({ pokemonName, reviewText, rating });
         localStorage.setItem("reviews", JSON.stringify(reviews));
 
-        // Clear the form
         reviewForm.reset();
         updateStars(0);
 
-        // Reload the reviews
         loadReviews();
     });
 
-    // Initial load of reviews
     loadReviews();
 });

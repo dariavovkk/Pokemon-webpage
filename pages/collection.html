@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jersey+15&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="../styles/style-registration.css">
+    <link rel="stylesheet" href="../styles/style-collection.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -38,11 +38,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="map.html">Mapa</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Zarejestruj się</a>
+                    <li class="nav-item" id="register-link">
+                        <a class="nav-link" href="registration.html">Zarejestruj się</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="login-link">
                         <a class="nav-link" href="login.html">Zaloguj się</a>
+                    </li>
+                    <li class="nav-item" id="profile-link">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item" id="collection-link">
+                        <a class="nav-link active" href="#">Kolekcja</a>
+                    </li>
+                    <li class="nav-item" id="logoutNavItem">
+                        <a class="nav-link" href="#" onclick="logout()">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -116,52 +125,16 @@
         </div>
     </div>
 
-    <div class="register-container">
+    <div class="pokemonInfoForm">
         <div class="listInfo">
-            <h1 class="listHead">Zarejestruj się i <span class="pokemon-color">dołącz</span> do społeczności!</h1>
-            <p class="listText">
-                Ta sekcja jest dedykowana rejestracji nowych użytkowników. Rejestracja jest szybka i prosta - dołącz do nas już dziś i rozpocznij swoją przygodę 
-                w świecie Pokémonów!
-            </p>
+            <h1 class="listHead">Pokémon Kolekcja</h1>
+            <p class="listText">Tutaj możesz zobaczyć swoją kolekcję pokémonów.</p>
         </div>
+    </div>
+  
 
-        <div class="register">
-            <form class="register-form" id="registerForm">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Nazwa użytkownika</label>
-                    <input type="text" class="form-control" id="username" required>
-                </div>
-                <div class="mb-3">
-                    <label for="age">Wiek</label>
-                    <input type="number" class="form-control" id="age" name="age" required>
-                </div>
-                <div class="mb-3">
-                    <label for="interests">Zainteresowania</label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="porady" value="porady">
-                        <label class="form-check-label" for="porady">Porady</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="gry" value="gra">
-                        <label class="form-check-label" for="gry">Gry wideo</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="news" value="news">
-                        <label class="form-check-label" for="news">Nowości</label>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Adres email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Hasło</label>
-                    <input type="password" class="form-control" id="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary registerBtn">Zarejestruj się</button>
-            </form>
-        </div>
-    </div>   
+    <div id="collection-container" class="collection"></div>
+
     
     <div class="footer">
         <div class="footer-logo">
@@ -173,65 +146,31 @@
                 <li><a href="encyklopedia.html">Encyklopedia</a></li>
                 <li><a href="porady.html">Porady</a></li>
                 <li><a href="map.html">Mapa</a></li>
-                <li><a href="#">Zarejestruj się</a></li>
-                <li><a href="#">Zaloguj się</a></li>
+                <li><a href="registration.html">Zarejestruj się</a></li>
+                <li><a href="login.html">Zaloguj się</a></li>
             </ul>
         </div>
     </div>  
-    
 
+    <script src="../scripts/collection.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('registerForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-                submitRegister();
-            });
-        });
-            function submitRegister() {
-                const username = document.getElementById('username').value;
-                const age = document.getElementById('age').value;
-                const interests = document.querySelectorAll('input[type="checkbox"]:checked');
-                const email = document.getElementById('email').value;
-                const password = document.getElementById('password').value;
+        const userLoggedIn = true;
+        const profileLink = document.getElementById("profile-link");
+        const registerLink = document.getElementById("register-link");
+        const loginLink = document.getElementById("login-link");
+        if (profileLink) {
+            profileLink.style.display = 'block';
+            registerLink.style.display = 'none';
+            loginLink.style.display = 'none';
+        } else {
+            profileLink.style.display = 'none';
+            registerLink.style.display = 'block';
+            loginLink.style.display = 'block';
+        }
 
-                if (!username.trim() || !age || !email.trim() || !password.trim()) {
-                    alert('Proszę wypełnić wszystkie pola.');
-                    return;
-                }
-
-                if (interests.length === 0) {
-                    alert('Proszę wybrać swoje zainteresowania.');
-                    return;
-                }
-
-                if (isNaN(age) || age <= 0) {
-                    alert('Proszę podać właściwy wiek.');
-                    return;
-                }
-
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!email.match(emailPattern)) {
-                    alert('Proszę podać swój poprawny email.');
-                    return;
-                }
-
-                if (password.length < 8) {
-                    alert('Hasło musi mieć co najmniej 8 znaków.');
-                    return;
-                }
-
-                const user = {
-                    username: username,
-                    age: age,
-                    interests: Array.from(interests).map(interest => interest.value),
-                    email: email,
-                    password: password
-                };
-
-                localStorage.setItem('user', JSON.stringify(user));
-
-                window.location.href = 'login.html';
-            }
+        function logout() {
+            window.location.href = '../index.html';
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

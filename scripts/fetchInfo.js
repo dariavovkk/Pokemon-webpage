@@ -19,7 +19,6 @@ async function getPokemonInfo() {
 
         const pokemonData = await response.json();
 
-        // Fetch species data for description and evolution chain
         const speciesUrl = pokemonData.species.url;
         const speciesResponse = await fetch(speciesUrl);
 
@@ -29,15 +28,13 @@ async function getPokemonInfo() {
 
         const speciesData = await speciesResponse.json();
 
-        // Find the English description and sanitize it
         const descriptionEntry = speciesData.flavor_text_entries.find(
             entry => entry.language.name === 'en'
         );
 
         let description = descriptionEntry ? descriptionEntry.flavor_text : 'No description available.';
-        description = description.replace(/[\n\f]/g, ' '); // Replace newlines and form feeds with a space
+        description = description.replace(/[\n\f]/g, ' ');
 
-        // Fetch evolution chain data
         const evolutionChainUrl = speciesData.evolution_chain.url;
         const evolutionResponse = await fetch(evolutionChainUrl);
 

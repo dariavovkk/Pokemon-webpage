@@ -9,12 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jersey+15&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Jersey+15&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../styles/style-profile.css">
-    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,14 +36,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="map.html">Mapa</a>
                     </li>
-                    <li class="nav-item" id="register-link">
-                        <a class="nav-link" href="registration.html">Zarejestruj się</a>
+                    <li class="nav-item" id="profile-link">
+                        <a class="nav-link active" href="#">Profile</a>
                     </li>
-                    <li class="nav-item" id="login-link">
-                        <a class="nav-link" href="login.html">Zaloguj się</a>
-                    </li>
-                    <li class="nav-item" id="profile-link" style="display: none;">
-                        <a class="nav-link active" href="profile.html">Profile</a>
+                    <li class="nav-item" id="collection-link">
+                        <a class="nav-link" href="collection.html">Kolekcja</a>
                     </li>
                     <li class="nav-item" id="logoutNavItem">
                         <a class="nav-link" href="#" onclick="logout()">Logout</a>
@@ -125,15 +119,66 @@
 
     <div class="pokemonInfoForm">
         <div class="listInfo">
-            <h1 class="listHead">Pokémon Kolekcja</h1>
-            <p class="listText">Tutaj możesz zobaczyć swoją kolekcję pokémonów.</p>
+            <h1 class="listHead">Profil Użytkownika</h1>
+            <p class="listText">Tutaj możesz zobaczyć informacje o swoim profilu i kolekcję pokémonów.</p>
         </div>
-    </div>
+    </div>    
   
+    <div class="container-info">
+        <div id="profileInfo" class="infoForm">
+            <div class="profile-detail">
+                <strong>Nazwa użytkownika:</strong> <span id="username"></span>
+            </div>
+            <div class="profile-detail">
+                <strong>Wiek:</strong> <span id="age"></span>
+            </div>
+            <div class="profile-detail">
+                <strong>Email:</strong> <span id="email"></span>
+            </div>
+            <div class="profile-detail">
+                <strong>Zainteresowania:</strong> <span id="interests"></span>
+            </div>
+        </div>
 
-    <div id="collection-container" class="collection"></div>
+        <form id="editProfileForm" style="display: none;">
+            <div class="form-group">
+                <label for="editName" class="form-label">Nazwa użytkownika</label>
+                <input type="text" class="form-control form-control-sm" id="editName">
+            </div>
+            <div class="form-group">
+                <label for="editAge" class="form-label">Wiek</label>
+                <input type="number" class="form-control form-control-sm" id="editAge">
+            </div>
+            <div class="form-group">
+                <label for="editEmail" class="form-label">Email</label>
+                <input type="email" class="form-control form-control-sm" id="editEmail">
+            </div>
+            <div class="form-group">
+                <label for="editInterests" class="form-label">Zainteresowania</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="interest1" value="porady">
+                    <label class="form-check-label" for="yoga-interest">Porady</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="interest2" value="gra">
+                    <label class="form-check-label" for="meditation-interest">Gry wideo</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="interest3" value="news">
+                    <label class="form-check-label" for="relax-interest">Nowości</label>
+                </div>
+                <div class="form-group">
+                    <label for="password">Hasło</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+            </div>
+            <button type="submit" class="btnEdit btn-primary btn-sm">Save Changes</button>
+        </form>
 
-    
+        <button class="btn btn-primary btn-edit" id="editProfileBtn">Edit Profile</button>
+        <button type="button" class="btn btn-danger btn-delete" id="deleteProfileBtn">Delete Profile</button>
+    </div>
+
     <div class="footer">
         <div class="footer-logo">
             <img src="../images/home/decor/logo.png" alt="Logo">
@@ -150,25 +195,7 @@
         </div>
     </div>  
 
-    <script src="../scripts.js"></script>
-    <script>
-        const userLoggedIn = true;
-        const profileLink = document.getElementById("profile-link");
-        const registerLink = document.getElementById("register-link");
-        const loginLink = document.getElementById("login-link");
-        if (profileLink) {
-            profileLink.style.display = 'block';
-            registerLink.style.display = 'none';
-            loginLink.style.display = 'none';
-        } else {
-            profileLink.style.display = 'none';
-            registerLink.style.display = 'block';
-            loginLink.style.display = 'block';
-        }
-
-        function logout() {
-            window.location.href = '../index.html';
-        }
-    </script>
+    <script src="../scripts/profile.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

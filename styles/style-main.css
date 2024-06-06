@@ -4,10 +4,6 @@
     margin-top: 200px;
 }
 
-.pokemon-image {
-    margin-left: 25%;
-}
-
 .info-text {
     margin-left: 10%;
     margin-top: 15%;
@@ -19,6 +15,15 @@
     position: absolute;
     left: 56%;
     margin-top: 33%;
+    background-color: #D5356F;
+    border-color: #D5356F;
+    border-radius: 30px;
+    border: none;
+    height: 60px;
+    width: 200px;
+    font-family: "Jersey 15", sans-serif;
+    font-size: 25px;
+    color: #fff;
 }
 
 .info:hover {
@@ -313,4 +318,56 @@ button[type="submit"]:hover {
 
 .reviewUser {
     color: #D5356F;
+}
+
+@media screen and (max-width: 768px) {
+    .pokemon-info-container {
+        margin-top: 30%;
+    }
+
+    .info-text {
+        text-align: center;
+    }
+
+    .info {
+        margin-top: 80%;
+        margin-left: 3%;
+        width: 200px !important;
+    }
+
+    .types-container {
+        margin-top: 20%;
+    }
+
+    .typeHead {
+        margin-left: 32%;
+    }
+
+    .stat1 {
+        margin-top: 55%;
+    }
+
+    .name1 {
+        margin-top: -55%;
+        margin-left: -95%;
+    }
+
+    .evol1 {
+        margin-left: -50%;
+    }
+
+    .stat2 {
+        margin-left: -110%;
+        margin-top: 50%;
+    }
+
+    .name2 {
+        width: 100%;
+        margin-top: -65%;
+        margin-left: 58%;
+    }
+
+    .evol2 {
+        margin-left: 55%;
+    }
 }
