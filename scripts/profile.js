@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Submitting login form
-
 
 // Check if the user is logged in
 const userLoggedIn = true;
@@ -54,13 +52,11 @@ document.getElementById('editProfileBtn').addEventListener('click', function() {
     document.getElementById('profileInfo').style.display = 'none';
     document.getElementById('editProfileForm').style.display = 'block';
 
-    // Populate the edit form with the current user data
     if (storedData) {
         document.getElementById('editName').value = storedData.username;
         document.getElementById('editAge').value = storedData.age;
         document.getElementById('editEmail').value = storedData.email;
         
-        // Set checkboxes for interests
         document.getElementById('interest1').checked = storedData.interests.includes('porady');
         document.getElementById('interest2').checked = storedData.interests.includes('gra');
         document.getElementById('interest3').checked = storedData.interests.includes('news');
@@ -79,7 +75,7 @@ document.getElementById('editProfileForm').addEventListener('submit', function(e
             document.getElementById('interest1').checked ? 'porady' : null,
             document.getElementById('interest2').checked ? 'gra' : null,
             document.getElementById('interest3').checked ? 'news' : null
-        ].filter(Boolean) // Removes null values
+        ].filter(Boolean)
     };
 
     localStorage.setItem('user', JSON.stringify(updatedData));
